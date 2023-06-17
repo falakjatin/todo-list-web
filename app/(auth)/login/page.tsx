@@ -1,7 +1,18 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+import Button from "@components/Button";
+import PageHeader from "@components/PageHeader";
+
 export default function Login() {
+
+    const router = useRouter()
+
     return (
-        <div>
-            <p>Login Page</p>
-        </div>
+        <>
+            <PageHeader title="Login Page" />
+            <Button title="Root" onClick={() => router.push('/')} />
+        </>
     )
 }

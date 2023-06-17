@@ -1,5 +1,12 @@
+import PageHeader from "@components/PageHeader";
+import Link from "next/link";
+
 export default function Root() {
+
   return (
-    <div>Root Page</div>
+    <>
+      <PageHeader title="Root Page" />
+      <Link href={'/login'}>Login</Link>
+    </>
   )
 }
