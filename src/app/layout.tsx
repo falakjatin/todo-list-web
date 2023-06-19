@@ -17,7 +17,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div id='root'>
-          <p>Root Layout</p>
           {children}
         </div>
       </body>
