@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Button from "@components/Button";
 import PageHeader from "@components/PageHeader";
 
-export default function Login() {
+const Login = () => {
 
     const router = useRouter()
 
@@ -16,3 +16,5 @@ export default function Login() {
         </>
     )
 }
+
+export default Login

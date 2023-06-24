@@ -1,7 +1,9 @@
 import PageHeader from "@components/PageHeader";
 
-export default function Register() {
+const Registration = () => {
     return (
         <PageHeader title="Register Page" />
     )
 }
+
+export default Registration

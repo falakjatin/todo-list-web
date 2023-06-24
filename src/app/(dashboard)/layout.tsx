@@ -1,19 +1,21 @@
-import '../globals.css'
+import '@styles/globals.css'
 
 export const metadata = {
   title: 'Todo List',
   description: 'Welcome to todo list app',
 }
 
-export default function DashboardLayout({
+const DashboardLayout = ({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) => {
   return (
-        <div>
-          <p>Dashboard Layout</p>
-          {children}
-        </div>
+    <div>
+      <p>Dashboard Layout</p>
+      {children}
+    </div>
   )
 }
+
+export default DashboardLayout

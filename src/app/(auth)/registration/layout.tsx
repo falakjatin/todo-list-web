@@ -1,14 +1,16 @@
-import '../../globals.css'
+import '@styles/globals.css'
 
 export const metadata = {
   title: 'Register',
   description: 'Welcome to todo list app',
 }
 
-export default function RootLayout({
+const RegistrationLayout = ({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) => {
   return children
 }
+
+export default RegistrationLayout

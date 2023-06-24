@@ -1,25 +1,27 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import ThemeProviderContext from '@/contexts/ThemeProvider'
+import '@styles/globals.css'
 
 export const metadata = {
   title: 'Todo List',
   description: 'Welcome to todo list app',
 }
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div id='root'>
-          {children}
-        </div>
+      <body>
+        <ThemeProviderContext>
+          <div id='root'>
+            {children}
+          </div>
+        </ThemeProviderContext>
       </body>
     </html>
   )
 }
+
+export default RootLayout

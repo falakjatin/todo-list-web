@@ -1,17 +1,17 @@
 import React from 'react'
 
-const PageHeader = ({
+const Header = ({
     title,
     className,
-}: PageHeader) => {
+}: Header) => {
     return (
         <h1 className={className}>{title}</h1>
     )
 }
 
-export default PageHeader
+export default Header
 
-interface PageHeader {
+interface Header {
     title: string,
     className?: string,
 }

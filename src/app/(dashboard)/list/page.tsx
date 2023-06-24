@@ -1,7 +1,9 @@
 import PageHeader from "@components/PageHeader";
 
-export default function List() {
+const List = () => {
     return (
         <PageHeader title="List Page" />
     )
 }
+
+export default List
