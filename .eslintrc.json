@@ -2,6 +2,8 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "eol-last": 1,
-    "no-multiple-empty-lines": ["warn", { "max": 1, "maxEOF": 0 }]
+    "no-multiple-empty-lines": ["warn", { "max": 1, "maxEOF": 0 }],
+    "no-unused-vars":"error",
+    "quotes": ["error", "single"]
   }
 }

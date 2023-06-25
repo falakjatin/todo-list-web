@@ -1,5 +1,3 @@
-import '@styles/globals.css'
-
 export const metadata = {
   title: 'Register',
   description: 'Welcome to todo list app',

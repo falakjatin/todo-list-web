@@ -11,7 +11,6 @@ module.exports = {
   plugins: [],
   prefix: '',
   important: true,
-  darkMode: 'class',
   variants: {
     extend: {},
   },

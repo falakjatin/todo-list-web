@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-theme="light"] {
+  /* light theme styles go here */
+  --bgColor: #008800;
+}
+[data-theme="dark"] {
+  /* dark theme styles go here */
+  --bgColor: #000088;
+}
+
+body {
+  background-color: var(--bgColor);
+}

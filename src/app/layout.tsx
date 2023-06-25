@@ -1,4 +1,5 @@
 import ThemeProviderContext from '@/contexts/ThemeProvider'
+
 import '@styles/globals.css'
 
 export const metadata = {
@@ -12,7 +13,7 @@ const RootLayout = ({
   children: React.ReactNode
 }) => {
   return (
-    <html lang="en">
+    <html lang='en' data-theme='dark'>
       <body>
         <ThemeProviderContext>
           <div id='root'>

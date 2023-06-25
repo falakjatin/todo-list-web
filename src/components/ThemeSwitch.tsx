@@ -1,12 +1,12 @@
 'use client'
 
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 const ThemeSwitcher = () => {
 
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, resolvedTheme } = useTheme();
 
     useEffect(() => {
         setMounted(true);
@@ -20,9 +20,15 @@ const ThemeSwitcher = () => {
         <div>
             The current theme is: {theme}
             <br />
-            <button onClick={() => setTheme("light")}>Light Mode</button>
+            <button onClick={() => {
+                console.log(resolvedTheme)
+                setTheme('light')
+            }}>Light Mode</button>
             <br />
-            <button onClick={() => setTheme("dark")}>Dark Mode</button>
+            <button onClick={() => {
+                console.log(resolvedTheme)
+                setTheme('dark')
+            }}>Dark Mode</button>
         </div>
     );
 };
