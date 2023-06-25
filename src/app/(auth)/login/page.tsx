@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation'
 
-import Button from "@components/Button";
-import PageHeader from "@components/PageHeader";
+import Button from '@components/Button';
+import PageHeader from '@components/PageHeader';
 
 const Login = () => {
 
@@ -11,8 +11,8 @@ const Login = () => {
 
     return (
         <>
-            <PageHeader title="Login Page" />
-            <Button title="Root" onClick={() => router.push('/')} />
+            <PageHeader title='Login Page' />
+            <Button title='Root' onClick={() => router.push('/')} />
         </>
     )
 }

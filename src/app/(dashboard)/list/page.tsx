@@ -1,8 +1,8 @@
-import PageHeader from "@components/PageHeader";
+import PageHeader from '@components/PageHeader';
 
 const List = () => {
     return (
-        <PageHeader title="List Page" />
+        <PageHeader title='List Page' />
     )
 }
 

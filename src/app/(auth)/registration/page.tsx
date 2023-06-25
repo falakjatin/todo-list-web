@@ -1,8 +1,8 @@
-import PageHeader from "@components/PageHeader";
+import PageHeader from '@components/PageHeader';
 
 const Registration = () => {
     return (
-        <PageHeader title="Register Page" />
+        <PageHeader title='Register Page' />
     )
 }
 

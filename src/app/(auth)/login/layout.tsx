@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Login',
+  title: "Login",
   description: 'Welcome to todo list app',
 }
 
