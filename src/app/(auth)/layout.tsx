@@ -1,3 +1,5 @@
+import Header from '@components/Header'
+
 export const metadata = {
   title: 'Auth',
   description: 'Welcome to todo list app',
@@ -9,10 +11,10 @@ const AuthLayout = ({
   children: React.ReactNode
 }) => {
   return (
-    <div>
-      <p>Auth Layout</p>
+    <>
+      <Header />
       {children}
-    </div>
+    </>
   )
 }
 

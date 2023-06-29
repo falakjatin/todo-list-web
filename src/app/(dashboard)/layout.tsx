@@ -1,3 +1,5 @@
+import Header from '@components/Header'
+
 export const metadata = {
   title: 'Todo List',
   description: 'Welcome to todo list app',
@@ -9,10 +11,10 @@ const DashboardLayout = ({
   children: React.ReactNode
 }) => {
   return (
-    <div>
-      <p>Dashboard Layout</p>
+    <>
+      <Header />
       {children}
-    </div>
+    </>
   )
 }
 

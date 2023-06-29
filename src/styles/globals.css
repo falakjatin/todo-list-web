@@ -4,11 +4,11 @@
 
 [data-theme="light"] {
   /* light theme styles go here */
-  --bgColor: #008800;
+  --bgColor: #fafafa;
 }
 [data-theme="dark"] {
   /* dark theme styles go here */
-  --bgColor: #000088;
+  --bgColor: #121212;
 }
 
 body {
