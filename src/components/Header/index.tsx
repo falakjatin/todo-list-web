@@ -7,6 +7,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { useAuth } from '@/contexts/AuthProvider'
+import ThemeSwitcher from '@components/ThemeSwitch/ThemeSwitch'
 
 const Header = () => {
 
@@ -15,13 +16,12 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white drop-shadow-md">
+        <header className="drop-shadow-md bg-[color:var(--bgColor)]">
             {/* navigation bar for md */}
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8" aria-label="Global">
                 <div className="flex md:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Your Company</span>
-                        <span>logo</span>
+                        <span className="text-[color:var(--textColor)]">logo</span>
                     </Link>
                 </div>
                 <div className="flex md:hidden">
@@ -35,6 +35,7 @@ const Header = () => {
                     </button>
                 </div>
                 <div className="hidden md:flex md:flex-1 md:justify-end">
+                    <ThemeSwitcher />
                     {userData ? <button
                         onClick={clearUserData}
                         className="text-sm font-semibold leading-6 text-gray-900">
@@ -52,9 +53,9 @@ const Header = () => {
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <span>logo</span>
+                            <span className="text-[color:var(--textColor)]">logo</span>
                         </a>
+                        <ThemeSwitcher />
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"

@@ -5,12 +5,15 @@
 [data-theme="light"] {
   /* light theme styles go here */
   --bgColor: #fafafa;
+  --textColor: #0f172a;
 }
 [data-theme="dark"] {
   /* dark theme styles go here */
   --bgColor: #121212;
+  --textColor: #ffffff;
 }
 
 body {
   background-color: var(--bgColor);
+  color: var(--textColor);
 }
