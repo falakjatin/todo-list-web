@@ -1,53 +1,30 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
-import { Dialog, Disclosure, Popover } from '@headlessui/react'
-import {
-    ArrowPathIcon,
-    Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
-    XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { Dialog } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+import { useAuth } from '@/contexts/AuthProvider'
 
 const Header = () => {
 
-    const pathname = usePathname()
+    const { userData, clearUserData } = useAuth()
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    useEffect(() => {
-        console.log(pathname)
-    }, [])
-
     return (
         <header className="bg-white drop-shadow-md">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
+            {/* navigation bar for md */}
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8" aria-label="Global">
+                <div className="flex md:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <span>logo</span>
                     </Link>
                 </div>
-                <div className="flex lg:hidden">
+                <div className="flex md:hidden">
                     <button
                         type="button"
                         className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -57,21 +34,20 @@ const Header = () => {
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                            Product
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                        </Popover.Button>
-                    </Popover>
-                </Popover.Group>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link href="/login" className="text-sm font-semibold leading-6 text-gray-900">
-                        Log in <span aria-hidden="true">&rarr;</span>
-                    </Link>
+                <div className="hidden md:flex md:flex-1 md:justify-end">
+                    {userData ? <button
+                        onClick={clearUserData}
+                        className="text-sm font-semibold leading-6 text-gray-900">
+                        Log out <span aria-hidden="true">&rarr;</span>
+                    </button>
+                        : <Link href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+                            Log in <span aria-hidden="true">&rarr;</span>
+                        </Link>}
                 </div>
             </nav>
-            <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+
+            {/* navigation bar for mobile */}
+            <Dialog as="div" className="md:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
@@ -90,40 +66,19 @@ const Header = () => {
                     </div>
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Product
-                                                <ChevronDownIcon
-                                                    className={`h-5 w-5 flex-none ${open ? 'rotate-180' : ''}`}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products, ...callsToAction].map((item) => (
-                                                    <Disclosure.Button
-                                                        key={item.name}
-                                                        as="a"
-                                                        href={item.href}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                    >
-                                                        {item.name}
-                                                    </Disclosure.Button>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-                            </div>
                             <div className="py-6">
-                                <Link
-                                    href="/login"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                {userData ? <button
+                                    onClick={clearUserData}
+                                    className="-mx-3 block rounded-md px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
-                                    Log in
-                                </Link>
+                                    Log out
+                                </button>
+                                    : <Link
+                                        href="/login"
+                                        className="-mx-3 block rounded-md px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    >
+                                        Log in
+                                    </Link>}
                             </div>
                         </div>
                     </div>

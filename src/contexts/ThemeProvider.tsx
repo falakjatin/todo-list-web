@@ -14,7 +14,7 @@ const ThemeProviderContext = ({ children }: {
   }, []);
 
   if (!mounted) {
-    return <>{children}</>;
+    return children
   }
 
   return <ThemeProvider>{children}</ThemeProvider>;

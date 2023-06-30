@@ -1,6 +1,6 @@
 const Button = ({
     title,
-    className,
+    className = '',
     onClick,
 }: Button) => {
     return (

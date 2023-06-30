@@ -1,3 +1,4 @@
+import { AuthProvider } from '@/contexts/AuthProvider'
 import ThemeProviderContext from '@/contexts/ThemeProvider'
 
 import '@styles/globals.css'
@@ -16,9 +17,11 @@ const RootLayout = ({
     <html lang='en' data-theme='dark'>
       <body>
         <ThemeProviderContext>
-          <div id='root'>
-            {children}
-          </div>
+          <AuthProvider>
+            <div id='root'>
+              {children}
+            </div>
+          </AuthProvider>
         </ThemeProviderContext>
       </body>
     </html>
