@@ -16,12 +16,12 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="drop-shadow-md bg-[color:var(--bgColor)]">
+        <header className="drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] bg-bgColor">
             {/* navigation bar for md */}
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8" aria-label="Global">
                 <div className="flex md:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
-                        <span className="text-[color:var(--textColor)]">logo</span>
+                        <span className="text-textColor">logo</span>
                     </Link>
                 </div>
                 <div className="flex md:hidden">
@@ -38,10 +38,10 @@ const Header = () => {
                     <ThemeSwitcher />
                     {userData ? <button
                         onClick={clearUserData}
-                        className="text-sm font-semibold leading-6 text-gray-900">
+                        className="text-sm font-semibold leading-6">
                         Log out <span aria-hidden="true">&rarr;</span>
                     </button>
-                        : <Link href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+                        : <Link href="/login" className="text-sm font-semibold leading-6">
                             Log in <span aria-hidden="true">&rarr;</span>
                         </Link>}
                 </div>
@@ -53,7 +53,7 @@ const Header = () => {
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
-                            <span className="text-[color:var(--textColor)]">logo</span>
+                            <span className="text-textColor">logo</span>
                         </a>
                         <ThemeSwitcher />
                         <button
@@ -70,13 +70,13 @@ const Header = () => {
                             <div className="py-6">
                                 {userData ? <button
                                     onClick={clearUserData}
-                                    className="-mx-3 block rounded-md px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    className="-mx-3 block rounded-md px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
                                 >
                                     Log out
                                 </button>
                                     : <Link
                                         href="/login"
-                                        className="-mx-3 block rounded-md px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        className="-mx-3 block rounded-md px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
                                     >
                                         Log in
                                     </Link>}

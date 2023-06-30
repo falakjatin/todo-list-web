@@ -4,13 +4,15 @@
 
 [data-theme="light"] {
   /* light theme styles go here */
-  --bgColor: #fafafa;
-  --textColor: #0f172a;
+  --bgColor: 250, 250, 250;
+  --textColor: 15, 23, 42;
+  --buttonBg: 34, 84, 170;
 }
 [data-theme="dark"] {
   /* dark theme styles go here */
-  --bgColor: #121212;
-  --textColor: #ffffff;
+  --bgColor: 18, 18, 18;
+  --textColor: 255, 255, 255;
+  --buttonBg: 34, 84, 170;
 }
 
 body {
