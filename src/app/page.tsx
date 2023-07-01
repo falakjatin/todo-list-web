@@ -1,9 +1,7 @@
-import Header from '@components/Header'
-
 const Root = () => {
   return (
     <div>
-      <Header />
+      <p>root</p>
     </div>
   )
 }

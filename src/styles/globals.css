@@ -2,20 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-theme="light"] {
-  /* light theme styles go here */
-  --bgColor: 250, 250, 250;
-  --textColor: 15, 23, 42;
-  --buttonBg: 34, 84, 170;
+@config "../../tailwind.config.js";
+
+:root {
+  --buttonBg: theme(colors.blue.700);
 }
-[data-theme="dark"] {
+
+.light {
+  /* light theme styles go here */
+  --bgColor: theme(colors.slate.50);
+  --textColor: theme(colors.slate.950);
+  --headerBg: theme(colors.stone.50);
+}
+.dark {
   /* dark theme styles go here */
-  --bgColor: 18, 18, 18;
-  --textColor: 255, 255, 255;
-  --buttonBg: 34, 84, 170;
+  --bgColor: theme(colors.slate.900);
+  --textColor: theme(colors.stone.50);
+  --headerBg: theme(colors.slate.800);
 }
 
 body {
   background-color: var(--bgColor);
   color: var(--textColor);
+}
+
+header {
+  background-color: var(--headerBg);
+}
+
+button {
+  background-color: var(--buttonBg);
+  color: theme(colors.slate.50);
 }

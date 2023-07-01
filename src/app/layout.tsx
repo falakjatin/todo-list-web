@@ -1,6 +1,8 @@
 import { AuthProvider } from '@/contexts/AuthProvider'
 import ThemeProviderContext from '@/contexts/ThemeProvider'
 
+import Header from '@components/Header'
+
 import '@styles/globals.css'
 
 export const metadata = {
@@ -19,6 +21,7 @@ const RootLayout = ({
         <ThemeProviderContext>
           <AuthProvider>
             <div id='root'>
+              <Header />
               {children}
             </div>
           </AuthProvider>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -11,17 +12,18 @@ import ThemeSwitcher from '@components/ThemeSwitch/ThemeSwitch'
 
 const Header = () => {
 
+    const pathname = usePathname()
     const { userData, clearUserData } = useAuth()
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] bg-bgColor">
+        <header className="drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)]">
             {/* navigation bar for md */}
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8" aria-label="Global">
                 <div className="flex md:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
-                        <span className="text-textColor">logo</span>
+                        <span>logo</span>
                     </Link>
                 </div>
                 <div className="flex md:hidden">
@@ -41,8 +43,8 @@ const Header = () => {
                         className="text-sm font-semibold leading-6">
                         Log out <span aria-hidden="true">&rarr;</span>
                     </button>
-                        : <Link href="/login" className="text-sm font-semibold leading-6">
-                            Log in <span aria-hidden="true">&rarr;</span>
+                        : <Link href={pathname === '/login' ? '/register' : '/login'} className="text-sm font-semibold leading-6">
+                            {pathname === '/login' ? 'Register' : 'Log in'} <span aria-hidden="true">&rarr;</span>
                         </Link>}
                 </div>
             </nav>
@@ -53,7 +55,7 @@ const Header = () => {
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
-                            <span className="text-textColor">logo</span>
+                            <span>logo</span>
                         </a>
                         <ThemeSwitcher />
                         <button
@@ -75,10 +77,10 @@ const Header = () => {
                                     Log out
                                 </button>
                                     : <Link
-                                        href="/login"
+                                        href={pathname === '/login' ? '/register' : '/login'}
                                         className="-mx-3 block rounded-md px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
                                     >
-                                        Log in
+                                        {pathname === '/login' ? 'Register' : 'Log in'}
                                     </Link>}
                             </div>
                         </div>

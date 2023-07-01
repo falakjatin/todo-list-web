@@ -1,11 +1,11 @@
 const Button = ({
     title,
-    className = '',
+    className,
     onClick,
 }: Button) => {
     return (
         <button
-            className={className}
+            className={className ? className : 'py-2 px-5 rounded-lg m-2 text-lg border-0'}
             onClick={onClick}
         >{title}</button>
     )
