@@ -17,7 +17,7 @@ const RootLayout = ({
 }) => {
   return (
     <html lang='en' data-theme='dark'>
-      <body>
+      <body className='bg-bgColor text-textColor'>
         <ThemeProviderContext>
           <AuthProvider>
             <div id='root'>

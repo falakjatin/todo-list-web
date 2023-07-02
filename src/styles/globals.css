@@ -4,10 +4,6 @@
 
 @config "../../tailwind.config.js";
 
-:root {
-  --buttonBg: theme(colors.blue.700);
-}
-
 .light {
   /* light theme styles go here */
   --bgColor: theme(colors.slate.50);
@@ -21,16 +17,7 @@
   --headerBg: theme(colors.slate.800);
 }
 
-body {
-  background-color: var(--bgColor);
-  color: var(--textColor);
-}
-
-header {
-  background-color: var(--headerBg);
-}
-
 button {
-  background-color: var(--buttonBg);
+  background-color: theme(colors.blue.700);
   color: theme(colors.slate.50);
 }

@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,6 +13,14 @@ module.exports = {
   important: true,
   variants: {
     extend: {},
+  },
+  theme: {
+    colors: {
+      bgColor: 'var(--bgColor)',
+      textColor: 'var(--textColor)',
+      headerBg: 'var(--headerBg)',
+      ...colors
+    }
   },
   darkMode: 'class',
 }
