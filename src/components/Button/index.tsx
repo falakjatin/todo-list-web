@@ -5,7 +5,7 @@ const Button = ({
 }: Button) => {
     return (
         <button
-            className={'py-2 px-5 rounded-lg m-2 text-md border-0 ' + className}
+            className={'w-full py-2 px-5 rounded-lg text-md border-0 ' + className}
             onClick={onClick}
         >{title}</button>
     )

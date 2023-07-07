@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,12 +13,17 @@ module.exports = {
     extend: {},
   },
   theme: {
-    colors: {
-      bgColor: 'var(--bgColor)',
-      textColor: 'var(--textColor)',
-      headerBg: 'var(--headerBg)',
-      ...colors
-    }
+    extend: {
+      colors: {
+        bgColor: 'var(--bgColor)',
+        textColor: 'var(--textColor)',
+        headerBg: 'var(--headerBg)',
+      },
+      boxShadow: {
+        modalDarkShadow: '0px 0px 18px #0284c7',
+        modalLightShadow: '0px 0px 18px #64748b',
+      },
+    },
   },
   darkMode: 'class',
 }

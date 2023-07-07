@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 export interface userDataType {
     u_id: number,
     u_name: string,

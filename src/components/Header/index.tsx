@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <header className="drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] bg-headerBg">
             {/* navigation bar for md */}
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8" aria-label="Global">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8 sticky top-0" aria-label="Global">
                 <div className="flex md:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span>logo</span>
@@ -49,9 +49,9 @@ const Header = () => {
                 </div>
             </nav>
 
-            {/* navigation bar for mobile */}
             <Dialog as="div" className="md:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />
+                {/* navigation bar for mobile */}
                 <Dialog.Panel className="bg-bgColor fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">

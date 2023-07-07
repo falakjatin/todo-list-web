@@ -14,7 +14,7 @@
   /* dark theme styles go here */
   --bgColor: theme(colors.slate.900);
   --textColor: theme(colors.stone.50);
-  --headerBg: theme(colors.slate.800);
+  --headerBg: theme(colors.sky.950);
 }
 
 button {

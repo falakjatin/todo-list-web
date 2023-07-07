@@ -1,9 +1,24 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     "eol-last": 1,
-    "no-multiple-empty-lines": ["warn", { "max": 1, "maxEOF": 0 }],
-    "no-unused-vars":"error",
-    "quotes": ["error", "single"]
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1,
+        "maxEOF": 0
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "eqeqeq": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "import/no-anonymous-default-export":"off"
   }
 }

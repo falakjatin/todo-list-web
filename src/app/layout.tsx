@@ -20,7 +20,7 @@ const RootLayout = ({
       <body className='bg-bgColor text-textColor'>
         <ThemeProviderContext>
           <AuthProvider>
-            <div id='root'>
+            <div id='root' className='min-h-screen flex flex-col'>
               <Header />
               {children}
             </div>
