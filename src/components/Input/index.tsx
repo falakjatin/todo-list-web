@@ -12,7 +12,7 @@ const Input = ({
             {title && <span className={'text-slate-950 dark:text-stone-50 ' + titleStyle}>{title}</span>}
             <label>
                 <input
-                    className={'w-full rounded-lg p-2 bg-slate-50 bg-[#fff] border-2 dark:bg-slate-900 dark:border-transparent ' + inputStyle}
+                    className={'w-full rounded-full p-2 pl-4 bg-slate-50 bg-[#fff] border-2 dark:bg-slate-900 dark:border-transparent ' + inputStyle}
                     {...props} />
             </label>
             <span className={'text-red-500 pl-2' + errorStyle}>{error}</span>

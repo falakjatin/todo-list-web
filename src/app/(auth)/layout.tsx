@@ -9,7 +9,7 @@ const AuthLayout = ({
   children: React.ReactNode
 }) => {
   return (
-    <div className="sm:w-96 w-9/12 sm:shadow-modalLightShadow sm:dark:shadow-modalDarkShadow shadow-none rounded-lg m-auto py-6 px-10 dark:bg-sky-950 text-center">
+    <div className="sm:w-96 w-11/12 shadow-modalLightShadow dark:shadow-modalDarkShadow rounded-lg m-auto py-6 px-10 dark:bg-sky-950 text-center">
       {children}
     </div>
   )

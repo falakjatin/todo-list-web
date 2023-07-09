@@ -18,7 +18,7 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] bg-headerBg">
+        <header className="drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] dark:shadow-modalDarkShadow bg-headerBg">
             {/* navigation bar for md */}
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8 sticky top-0" aria-label="Global">
                 <div className="flex md:flex-1">

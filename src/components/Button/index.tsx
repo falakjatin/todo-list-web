@@ -1,20 +1,26 @@
+import { IconType } from 'react-icons'
+
 const Button = ({
-    title,
+    title = '',
     className = '',
     onClick,
+    rightIcon: RightIcon,
+    leftIcon: LeftIcon,
 }: Button) => {
     return (
         <button
-            className={'w-full py-2 px-5 rounded-lg text-md border-0 ' + className}
+            className={'py-2 px-5 rounded-full text-md border-0 flex gap-x-2 justify-center items-center ' + className}
             onClick={onClick}
-        >{title}</button>
+        >{LeftIcon && <LeftIcon />}{title}{RightIcon && <RightIcon />}</button>
     )
 }
 
 export default Button
 
 interface Button {
-    title: string,
+    title?: string,
     className?: string,
     onClick: () => void,
+    rightIcon?: IconType,
+    leftIcon?: IconType,
 }

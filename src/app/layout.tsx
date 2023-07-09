@@ -22,7 +22,9 @@ const RootLayout = ({
           <AuthProvider>
             <div id='root' className='min-h-screen flex flex-col'>
               <Header />
-              {children}
+              <main className='px-6 md:px-8 mt-5 flex flex-1'>
+                {children}
+              </main>
             </div>
           </AuthProvider>
         </ThemeProviderContext>
