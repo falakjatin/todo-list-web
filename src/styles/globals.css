@@ -9,15 +9,81 @@
   --bgColor: theme(colors.slate.50);
   --textColor: theme(colors.slate.950);
   --headerBg: theme(colors.stone.50);
+  --loader: theme(colors.blue.700);
+  --loaderOpacity: 0 0 1rem rgba(29, 78, 216, 0.75);
 }
 .dark {
   /* dark theme styles go here */
   --bgColor: theme(colors.slate.900);
   --textColor: theme(colors.stone.50);
   --headerBg: theme(colors.sky.950);
+  --loader: theme(colors.sky.600);
+  --loaderOpacity: 0 0 1rem rgba(2, 132, 199, 0.75);
 }
 
-button {
+button,
+.link-button {
   background-color: theme(colors.blue.700);
   color: theme(colors.slate.50);
+}
+
+button:hover,
+.link-button:hover {
+  background-color: theme(colors.blue.600);
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: transparent;
+  z-index: 9999;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(var(--loaderOpacity));
+}
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem var(--loader);
+  animation-name: pulsIn;
+}
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 var(--loader);
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem var(--loader);
+    opacity: 1;
+  }
+  50%,
+  100% {
+    box-shadow: inset 0 0 0 0 var(--loader);
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+  0%,
+  50% {
+    box-shadow: 0 0 0 0 var(--loader);
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem var(--loader);
+    opacity: 1;
+  }
 }

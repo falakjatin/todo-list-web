@@ -11,7 +11,7 @@ export const metadata = {
 }
 
 const RootLayout = ({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) => {
@@ -22,8 +22,10 @@ const RootLayout = ({
           <AuthProvider>
             <div id='root' className='min-h-screen flex flex-col'>
               <Header />
-              <main className='px-6 md:px-8 mt-5 flex flex-1'>
-                {children}
+              <main className='px-6 md:px-8 mt-5 mx-auto flex flex-1 max-w-7xl'>
+                <div className='flex'>
+                  {children}
+                </div>
               </main>
             </div>
           </AuthProvider>

@@ -10,15 +10,15 @@ const SocialBtns = ({
     return (
         <div className={className}>
             <Button
-                className='bg-white drop-shadow-lg dark:shadow-modalDarkShadow'
+                className='bg-white drop-shadow-lg dark:hover:shadow-modalDarkShadow'
                 leftIcon={() => <FcGoogle className='text-lg' />}
                 onClick={() => console.log('google login')} />
             <Button
-                className='bg-white drop-shadow-lg dark:shadow-modalDarkShadow'
+                className='bg-white drop-shadow-lg dark:hover:shadow-modalDarkShadow'
                 leftIcon={() => <FaFacebookF className='text-lg text-[#4267B2]' />}
                 onClick={() => console.log('google login')} />
             <Button
-                className='bg-white drop-shadow-lg dark:shadow-modalDarkShadow'
+                className='bg-white drop-shadow-lg dark:hover:shadow-modalDarkShadow'
                 leftIcon={() => <PiMicrosoftOutlookLogoBold className='text-lg text-[#127CD6]' />}
                 onClick={() => console.log('google login')} />
         </div>

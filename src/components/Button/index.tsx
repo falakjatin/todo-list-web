@@ -9,7 +9,7 @@ const Button = ({
 }: Button) => {
     return (
         <button
-            className={'py-2 px-5 rounded-full text-md border-0 flex gap-x-2 justify-center items-center ' + className}
+            className={'py-2 px-5 rounded-full text-base border-0 flex gap-x-2 justify-center items-center ' + className}
             onClick={onClick}
         >{LeftIcon && <LeftIcon />}{title}{RightIcon && <RightIcon />}</button>
     )
