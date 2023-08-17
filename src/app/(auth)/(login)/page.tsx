@@ -1,17 +1,25 @@
 'use client'
 
-import React from 'react'
+import Link from 'next/link'
 
 import { Formik } from 'formik'
 
 import Button from '@components/Button'
 import Input from '@components/Input'
-
-import validations from './validations'
-import Link from 'next/link'
 import SocialBtns from '@components/SocialBtns'
 
+import { useAuth } from '@/contexts/AuthProvider'
+
+import validations from './validations'
+
 const Login = () => {
+    const { setUserData } = useAuth()
+
+    const onSubmit = (values: onSubmit) => {
+        console.log(values)
+        setUserData({ f_name: 'abcd', l_name: 'xyz', u_name: 'q123', u_id: 1 })
+    }
+
     return (
         <div>
             <p>Login</p>
@@ -20,7 +28,7 @@ const Login = () => {
                 validationSchema={validations}
                 validateOnChange={false}
                 validateOnBlur={true}
-                onSubmit={values => console.log(values)}
+                onSubmit={onSubmit}
             >
                 {({ handleChange, handleSubmit, values, errors }) => (
                     <>
@@ -53,3 +61,8 @@ const Login = () => {
 }
 
 export default Login
+
+interface onSubmit {
+    username: string,
+    password: string,
+}

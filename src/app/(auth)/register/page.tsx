@@ -50,7 +50,7 @@ const Register = () => {
                     </>
                 )}
             </Formik>
-            <p className='my-4'>Already have an account <Link href='/login' className='text-sky-600 dark:text-blue-700'>Login Here</Link></p>
+            <p className='my-4'>Already have an account <Link href='/' className='text-sky-600 dark:text-blue-700'>Login Here</Link></p>
             <hr className='my-6 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-sky-600 to-transparent opacity-25 dark:opacity-100' />
             <SocialBtns className='grid grid-cols-3 gap-x-2' />
         </div>

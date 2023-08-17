@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const NotFound = () => {
     return (
-        <section className="bg-white dark:bg-gray-900 flex flex-1">
-            <div className="container flex items-center px-6 py-12 mx-auto">
+        <section className="bg-white dark:bg-gray-900 flex flex-1 min-w-full">
+            <div className="container flex items-center px-6 py-12 mx-auto justify-center">
                 <div>
                     <p className="text-sm font-medium text-blue-500 dark:text-blue-400">404 error</p>
                     <h1 className="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">We can&apos;t find that page</h1>
