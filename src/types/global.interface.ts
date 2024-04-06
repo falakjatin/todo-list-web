@@ -1,6 +1,8 @@
 export interface userDataType {
-    username: string,
-    password: string,
+    u_id: number,
+    u_name: string,
+    f_name: string,
+    l_name: string,
 }
 
 export interface AuthContextType {
