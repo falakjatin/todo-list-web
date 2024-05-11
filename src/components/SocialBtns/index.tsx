@@ -2,7 +2,7 @@ import Button from '@components/Button'
 
 import { FaFacebookF } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
-import { PiMicrosoftOutlookLogoBold } from 'react-icons/pi'
+import { BsLinkedin } from 'react-icons/bs'
 
 const SocialBtns = ({
     className = '',
@@ -19,7 +19,7 @@ const SocialBtns = ({
                 onClick={() => console.log('google login')} />
             <Button
                 className='bg-white drop-shadow-lg dark:hover:shadow-modalDarkShadow'
-                leftIcon={() => <PiMicrosoftOutlookLogoBold className='text-lg text-[#127CD6]' />}
+                leftIcon={() => <BsLinkedin className='text-lg text-[#127CD6]' />}
                 onClick={() => console.log('google login')} />
         </div>
     )

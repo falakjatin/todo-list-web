@@ -1,17 +1,25 @@
 'use client'
 
-import React from 'react'
+import Link from 'next/link'
 
 import { Formik } from 'formik'
 
 import Button from '@components/Button'
 import Input from '@components/Input'
-
-import validations from './validations'
-import Link from 'next/link'
 import SocialBtns from '@components/SocialBtns'
 
+import { useAuth } from '@/contexts/AuthProvider'
+
+import validations from './validations'
+
 const Login = () => {
+    const { setUserData } = useAuth()
+
+    const onSubmit = (values: onSubmit) => {
+        console.log(values)
+        setUserData({ f_name: 'abcd', l_name: 'xyz', u_name: 'q123', u_id: 1 })
+    }
+
     return (
         <div>
             <p>Login</p>
@@ -20,7 +28,7 @@ const Login = () => {
                 validationSchema={validations}
                 validateOnChange={false}
                 validateOnBlur={true}
-                onSubmit={values => console.log(values)}
+                onSubmit={onSubmit}
             >
                 {({ handleChange, handleSubmit, values, errors }) => (
                     <>
@@ -45,7 +53,7 @@ const Login = () => {
                     </>
                 )}
             </Formik>
-            <p className='my-4'>Don&apos;t have an account <Link href='/register' className='text-sky-600 dark:text-blue-700'>Register Here</Link></p>
+            <p className='my-4'>Don&apos;t have an account <Link href='/register' className='text-sky-600 dark:text-sky-200'>Register Here</Link></p>
             <hr className='my-6 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-sky-600 to-transparent opacity-25 dark:opacity-100' />
             <SocialBtns className='grid grid-cols-3 gap-x-2' />
         </div>
@@ -53,3 +61,8 @@ const Login = () => {
 }
 
 export default Login
+
+interface onSubmit {
+    username: string,
+    password: string,
+}

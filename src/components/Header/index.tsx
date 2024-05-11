@@ -43,8 +43,8 @@ const Header = () => {
                         className="text-sm font-semibold leading-6">
                         Log out <span aria-hidden="true">&rarr;</span>
                     </button>
-                        : <Link href={pathname === '/login' ? '/register' : '/login'} className="text-sm font-semibold leading-6">
-                            {pathname === '/login' ? 'Register' : 'Log in'} <span aria-hidden="true">&rarr;</span>
+                        : <Link href={pathname === '/' ? '/register' : '/'} className="text-sm font-semibold leading-6">
+                            {pathname === '/' ? 'Register' : 'Log in'} <span aria-hidden="true">&rarr;</span>
                         </Link>}
                 </div>
             </nav>
@@ -77,10 +77,10 @@ const Header = () => {
                                     Log out
                                 </button>
                                     : <Link
-                                        href={pathname === '/login' ? '/register' : '/login'}
+                                        href={pathname === '/' ? '/register' : '/'}
                                         className="-mx-3 block rounded-md px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
                                     >
-                                        {pathname === '/login' ? 'Register' : 'Log in'}
+                                        {pathname === '/' ? 'Register' : 'Log in'}
                                     </Link>}
                             </div>
                         </div>

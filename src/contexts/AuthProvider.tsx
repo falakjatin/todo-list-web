@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+// import { cookies } from 'next/headers'
 
 import { AuthContextType, userDataType } from '@/types/global.interface'
 
@@ -19,15 +20,15 @@ export const AuthProvider = ({ children }: {
         getData()
     }, [])
 
-    const getData = async () => {
-        const data = await localStorage.getItem('userData')
-        if (data) {
-            setUser(JSON.parse(data))
-        }
+    const getData = () => {
+        // const data = cookies().get('data')?.value
+        // if (data) {
+        //     setUser(JSON.parse(data))
+        // }
     }
 
     const setUserData = (data: userDataType) => {
-        localStorage.setItem('userData', JSON.stringify(data))
+        // cookies().set('data', JSON.stringify(data), { secure: true })
         setUser(data)
         router.push('/list')
     }
@@ -35,11 +36,13 @@ export const AuthProvider = ({ children }: {
     const clearUserData = () => {
         localStorage.removeItem('userData')
         setUser(null)
-        router.push('/login')
+        router.push('/')
     }
 
     return (
-        <AuthContext.Provider value={{ userData, setUserData, clearUserData }}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ userData, setUserData, clearUserData }}>
+            {children}
+        </AuthContext.Provider>
     )
 }
 
